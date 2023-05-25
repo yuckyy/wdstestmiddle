@@ -1,0 +1,55 @@
+
+.body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.navbar-custom .navbar-toggler-icon {
+    background-color: #ffffff;
+}
+
+.navbar-custom .navbar-toggler {
+    border-color: #ffffff;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.navbar-custom .navbar-nav .nav-link:hover,
+.navbar-custom .navbar-nav .nav-link:focus {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar{
+    box-shadow: 0 1px 28px rgba(0,0,0,0.01), 0 1px 10px rgba(0,0,0,0.1);
+}
+.text-dark{
+    color:#434343;line-height:28px;
+}
+.text-primary{
+    color: #0880AE;line-height:28px;
+}
+.news-item{
+    height: 114.66666412353516px;width: 425px;left: 1195px;top: 216px;border-radius: 0px;padding: 16px 32px 16px 32px;background-size: cover, 425px;background-position: center center;
+}
+.testimonial-item{
+    box-sizing: border-box;/*position: absolute;*/width: 244px;height: 292px;/*left: 0px;*//*top: 0px;*/background: #FFFFFF;border: 1px solid #C1C7D0;
+}
+.testimonial-name{
+    font-family: Poppins;font-size: 14px;font-weight: 600;line-height: 28px;letter-spacing: 0px;text-align: left;
+}
+.testimonial-position{
+//styleName: Small Text/Medium;font-family: Poppins;font-size: 12px;font-weight: 500;line-height: 16px;letter-spacing: 0px;text-align: left
+}
+.testimonial-text{
+    font-family: Poppins;font-size: 14px;font-style: italic;font-weight: 400;line-height: 28px;letter-spacing: 0px;text-align: left;
+}
+.testimonial-avatar{
+    height: 50px;width: 50px;left: 4px;top: 310px;border-radius: 30px;
+}
+.five-columns{
+    flex: 0 0 calc(20% - 10px); /* Subtracting margin */
+    max-width: calc(20% - 10px); /* Subtracting margin */
+    margin-bottom: 20px; /* Space between blocks */
+}
+
