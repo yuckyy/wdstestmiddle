@@ -36,10 +36,32 @@
 {{--                            <p id="progress">Upload Progress: </p>--}}
 {{--                        @endif--}}
                 </div>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">Delete all reviews</button>
+                <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="confirmDeleteModalLabel">Deletion confirmation</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete all reviews? This action is irreversible.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <form action="{{ route('reviews.delete-all') }}" method="POST" style="display: inline;">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+{{--PROGRESS FUNCTION--}}
 {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>--}}
 {{--<script>--}}
 {{--    $(document).ready(function() {--}}
@@ -62,4 +84,5 @@
 {{--        setInterval(updateProgress, 2000);--}}
 {{--    });--}}
 {{--</script>--}}
+
 @endsection

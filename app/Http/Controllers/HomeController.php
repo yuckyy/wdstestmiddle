@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        Session::remove('upload_progress');
+//        Session::remove('upload_progress');
         return view('home');
     }
     public function upload(Request $request)
@@ -79,6 +79,12 @@ class HomeController extends Controller
 
         // The file was not loaded
         return redirect()->route('home')->with('error', 'The file was not loaded. Please select a file to upload.');
+    }
+    public function deleteAllReviews()
+    {
+        Review::truncate();
+
+        return redirect()->back()->with('success', 'All reviews have been successfully removed.');
     }
 
 }

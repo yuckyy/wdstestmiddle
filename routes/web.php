@@ -22,6 +22,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/upload', [App\Http\Controllers\HomeController::class, 'upload'])->name('upload');
+Route::post('/reviews/delete-all', [App\Http\Controllers\HomeController::class, 'deleteAllReviews'])->name('reviews.delete-all');
 
 //Route::get('/progress', function () {
 //    if (Session::has('upload_progress')) {
