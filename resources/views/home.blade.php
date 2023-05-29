@@ -30,11 +30,9 @@
                         <form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input type="file" name="csv_file">
-                            <button type="submit">Upload</button>
+                            <button type="submit" id="uploadButton">Upload</button>
                         </form>
-{{--                        @if(Session::has('upload_progress'))--}}
-{{--                            <p id="progress">Upload Progress: </p>--}}
-{{--                        @endif--}}
+                        <div class="loader d-none"></div>
                 </div>
                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">Delete all reviews</button>
                 <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
@@ -61,28 +59,10 @@
         </div>
     </div>
 </div>
-{{--PROGRESS FUNCTION--}}
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>--}}
-{{--<script>--}}
-{{--    $(document).ready(function() {--}}
-{{--        function updateProgress() {--}}
-{{--            $.ajax({--}}
-{{--                url: '{{ route("progress") }}',--}}
-{{--                type: 'GET',--}}
-{{--                dataType: 'json',--}}
-{{--                success: function(response) {--}}
-{{--                    // if (response.progress > 0) {--}}
-{{--                    console.log(response.progress);--}}
-{{--                        $('#progress').text('Progress: ' + response.progress + '%');--}}
-{{--                    // }--}}
-{{--                },--}}
-{{--                error: function() {--}}
-{{--                    console.log('Error occurred while updating progress.');--}}
-{{--                }--}}
-{{--            });--}}
-{{--        }--}}
-{{--        setInterval(updateProgress, 2000);--}}
-{{--    });--}}
-{{--</script>--}}
-
+<script>
+    document.getElementById('uploadButton').addEventListener('click', function() {
+        var loader = document.querySelector('.loader');
+        loader.classList.remove('d-none');
+    });
+</script>
 @endsection

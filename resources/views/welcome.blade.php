@@ -28,14 +28,14 @@
     }
 </style>
 <body class="antialiased">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container bd-subnavbar py-2">
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <div class="container bd-subnavbar ">
         <a class="navbar-brand" href="#">
             <img src="{{ asset('img/Logo.svg') }}" alt="Khan Tech">
         </a>
-        <div class="brand-text">
+        <div class="brand-text ">
             <span class="brand-text-top">Need Help?</span><br>
-            <span class="brand-text-bottom">(514) 543-9936</span>
+            <a class="brand-text-bottom" style="text-decoration: none" href="tel:5145439936">(514) 543-9936</a>
         </div>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -56,10 +56,10 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li class="dropdown dropend">
-                                    <a class="dropdown-item dropdown-toggle" href="#" id="multilevelDropdownMenu1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Multilevel Action 1</a>
-                                    <ul class="dropdown-menu" aria-labelledby="multilevelDropdownMenu1">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li class="dropdown position-static">
+                                    <a class="dropdown-item dropdown-toggle " href="#" id="multilevelDropdownMenu1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Multilevel Action 1</a>
+                                    <ul class="dropdown-menu dropdown-menu-special"style="right: -100%;" aria-labelledby="multilevelDropdownMenu1">
+                                        <li style="border-top: none;"><a class="dropdown-item" href="#">Action</a></li>
 
                                         <li><a class="dropdown-item" href="#">Another action</a></li>
                                         <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -102,18 +102,23 @@
                 <li class="nav-item">
                     <a class="nav-link " aria-current="page" href="#">Contact</a>
                 </li>
+                <div class="brand-text2">
+                    <span class="brand-text-top">Need Help?</span><br>
+                    <a class="brand-text-bottom" style="text-decoration: none" href="tel:5145439936">(514) 543-9936</a>
+                </div>
             </ul>
         </div>
     </div>
 </nav>
-<div class="container mt-5">
+<div class="container margin-top">
     <div class="row">
         <div class="col-lg-8">
             <div class="row">
-                <div class="col-md-6" style="padding-right: 0px!important;">
-                    <img src="{{ asset('img/Pic.svg') }}" alt="Khan Tech" class="img-fluid">
+                <div class="col-lg-6 img-fluid" >
+                    <img src="{{ asset('../img/Pic.svg') }}" alt="Khan Tech" class="img-fluid d-none d-lg-block">
+                    <img src="{{ asset('../img/beautiful-girl-is-engaged-yoga-studio (1).jpg') }}" alt="Khan Tech" class="img-fluid d-block d-lg-none">
                 </div>
-                <div class="col-md-6" style="padding-left: 0px!important;background-color: #F5F5F5">
+                <div class="col-lg-6 mt-4 mt-lg-0" style="padding-left: 0px!important;background-color: #F5F5F5">
                     <div class="container without-p-r pr-0">
                         <div class="mt-4">
                             <h6 class="text-primary">Pharmaceuticals</h6>
@@ -154,7 +159,7 @@
                     <h1>Testimonials</h1>
                 </div>
                 @foreach ($reviews as $review)
-                    <div class="col-2 col-sm-6 col-md-3 mt-5 five-columns ">
+                    <div class="col-12 col-sm-6 col-md-6 mt-5 five-columns ">
                         <div class="testimonial-item">
                             <div class="container">
                                 <div class="row">
@@ -254,11 +259,11 @@
                     <div class="mt-3">
                         <div class="d-flex align-items-start">
                             <i class="fas fa-map-marker-alt text-white me-2 mt-1"></i>
-                            <span class="text-light">4517 Washington Ave. Manchester, Kentucky 39495</span>
+                            <a class="text-light" style="text-decoration: none" href="https://www.google.com/maps/search/?api=1&query=4517+Washington+Ave+Manchester+Kentucky+39495" target="_blank">4517 Washington Ave. Manchester, Kentucky 39495</a>
                         </div>
                         <div class="d-flex align-items-start">
                             <i class="fas fa-envelope text-white me-2 mt-1"></i>
-                            <span class="text-light">darrell@mail.com</span>
+                            <a class="text-light" style="text-decoration: none" href="mailto:darrell@mail.com">darrell@mail.com</a>
                         </div>
                         <div class="d-flex align-items-start">
                             <i class="fas fa-phone text-white me-2 mt-1"></i>
@@ -293,6 +298,7 @@
 <script src="{{ asset('fontawesome/all.min.js') }}"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
 <script src="{{ asset('bootstrap/js/main.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 
 </body>
 </html>
